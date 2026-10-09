@@ -1,593 +1,224 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Polash Chandra Das — AI researcher focused on deep learning, medical imaging, structural MRI, and efficient AI systems." />
-  <meta name="keywords" content="Polash Chandra Das, AI Researcher, Deep Learning, Medical Imaging, MRI, Alzheimer's Disease, PyTorch" />
-  <meta name="author" content="Polash Chandra Das" />
-  <meta name="theme-color" content="#07111f" />
-
-  <meta property="og:title" content="Polash Chandra Das | AI Researcher" />
-  <meta property="og:description" content="Research portfolio in deep learning, medical imaging, structural MRI, and efficient AI." />
-  <meta property="og:type" content="website" />
-
-  <title>Polash Chandra Das | AI Researcher</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Polash Chandra Das — profile, education, research, and publications.">
+  <title>Polash Chandra Das | Research Profile</title>
+  <style>
+    :root {
+      --bg: #f7f8fa;
+      --surface: #ffffff;
+      --text: #182230;
+      --muted: #5d6878;
+      --line: #e2e7ee;
+      --accent: #2458a6;
+      --accent-soft: #edf3ff;
+      --max: 900px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 16px/1.7 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    header {
+      background: rgba(255,255,255,.94); border-bottom: 1px solid var(--line);
+      position: sticky; top: 0; z-index: 10; backdrop-filter: blur(10px);
+    }
+    nav {
+      min-height: 68px; display: flex; align-items: center; justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { font-weight: 750; color: var(--text); letter-spacing: -.3px; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 22px; font-size: 14px; }
+    .nav-links a { color: var(--muted); }
+    .hero { padding: 78px 0 54px; }
+    .eyebrow {
+      color: var(--accent); text-transform: uppercase; letter-spacing: 1.8px;
+      font-size: 12px; font-weight: 750; margin: 0 0 12px;
+    }
+    h1 { font-size: clamp(34px, 6vw, 52px); line-height: 1.13; letter-spacing: -1.8px; margin: 0 0 16px; }
+    .subtitle { color: var(--accent); font-size: 18px; font-weight: 650; margin: 0 0 18px; }
+    .intro { max-width: 720px; color: var(--muted); font-size: 17px; margin: 0; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+    .button {
+      display: inline-block; padding: 9px 15px; border: 1px solid var(--line);
+      border-radius: 8px; background: var(--surface); font-size: 14px; font-weight: 650;
+    }
+    .button.primary { color: white; background: var(--accent); border-color: var(--accent); }
+    main { padding-bottom: 30px; }
+    section { padding: 34px 0; scroll-margin-top: 85px; }
+    .section-title { font-size: 25px; letter-spacing: -.6px; margin: 0 0 20px; }
+    .panel {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+      padding: 24px;
+    }
+    .entry { padding: 0 0 20px; margin: 0 0 20px; border-bottom: 1px solid var(--line); }
+    .entry:last-child { border: 0; padding-bottom: 0; margin-bottom: 0; }
+    .entry h3 { margin: 0 0 3px; font-size: 17px; line-height: 1.45; }
+    .meta { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
+    .entry p { margin: 6px 0 0; }
+    .entry ul { padding-left: 22px; margin: 10px 0 0; }
+    .entry li { margin: 6px 0; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+    .tag { background: var(--accent-soft); color: #234c88; padding: 4px 10px; border-radius: 99px; font-size: 12px; }
+    .publication-note { color: var(--muted); font-size: 14px; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0 32px; color: var(--muted); font-size: 13px; }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      nav { align-items: flex-start; flex-direction: column; padding: 14px 0; gap: 8px; }
+      .nav-links { gap: 10px 16px; }
+      .hero { padding-top: 48px; }
+      .panel { padding: 19px; }
+    }
+  </style>
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <div class="page-noise" aria-hidden="true"></div>
-  <div class="ambient ambient-one" aria-hidden="true"></div>
-  <div class="ambient ambient-two" aria-hidden="true"></div>
-
-  <header class="site-header" id="top">
-    <div class="container nav-wrap">
-      <a class="brand" href="#home" aria-label="Polash Chandra Das home">
-        <span class="brand-mark">PD</span>
-        <span class="brand-text">
-          <strong>Polash Das</strong>
-          <small>AI Research</small>
-        </span>
-      </a>
-
-      <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a class="brand" href="#profile">Polash Chandra Das</a>
+      <div class="nav-links">
+        <a href="#profile">Profile</a>
         <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
         <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="nav-actions">
-        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch theme" title="Switch theme">
-          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
-          </svg>
-          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
-          </svg>
-        </button>
-
-        <button class="menu-btn" id="menuButton" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open navigation menu">
-          <span></span><span></span><span></span>
-        </button>
       </div>
-    </div>
-
-    <nav class="mobile-nav" id="mobileMenu" aria-label="Mobile navigation">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main id="main">
-    <section class="hero section" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <div class="status-pill">
-            <span class="status-dot" aria-hidden="true"></span>
-            Researching efficient AI for medical imaging
-          </div>
-
-          <p class="eyebrow">AI ENGINEER · AI AGENTS · DEEP LEARNING</p>
-
-          <h1>
-            Building efficient AI that
-            <span class="gradient-text">understands medical images.</span>
-          </h1>
-
-          <p class="hero-lead">
-            I build intelligent AI systems across AI agents, RAG, deep learning, and medical AI.
-            I am currently studying at Donghua University and working on ongoing Alzheimer's
-            disease–related research using structural MRI.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="assets/Polash_Chandra_Das_CV.pdf" download>
-              Download CV
-              <span aria-hidden="true">↓</span>
-            </a>
-            <a class="btn btn-secondary" href="#projects">
-              View Projects
-              <span aria-hidden="true">↗</span>
-            </a>
-            <a class="btn btn-secondary" href="https://github.com/polashdas040" target="_blank" rel="noopener">
-              GitHub
-              <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-
-          <div class="hero-university">
-            <span class="university-label">Current University</span>
-            <strong>Donghua University</strong>
-          </div>
-
-          <div class="social-row" aria-label="Social links">
-            <a href="https://github.com/polashdas040" target="_blank" rel="noopener">GitHub</a>
-            <span>•</span>
-            <a href="https://www.linkedin.com/in/polashdas040" target="_blank" rel="noopener">LinkedIn</a>
-            <span>•</span>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-
-        <aside class="hero-card reveal" aria-label="Research profile">
-          <div class="profile-orbit" aria-hidden="true"></div>
-
-          <div class="profile-photo-shell">
-            <img src="img/photo.jpg" alt="Portrait of Polash Chandra Das" class="profile-photo" />
-          </div>
-
-          <div class="profile-card-body">
-            <div>
-              <p class="profile-label">Current focus</p>
-              <h2>AI Agents, Deep Learning & Medical AI</h2>
-            </div>
-
-            <div class="mini-metrics">
-              <div>
-                <strong>AG</strong>
-                <span>AI Agents</span>
-              </div>
-              <div>
-                <strong>RAG</strong>
-                <span>Agentic RAG</span>
-              </div>
-              <div>
-                <strong>DL</strong>
-                <span>Deep Learning</span>
-              </div>
-            </div>
-
-            <div class="research-stack">
-              <span>LangGraph</span>
-              <span>LangChain</span>
-              <span>PyTorch</span>
-              <span>Medical AI</span>
-            </div>
-          </div>
-        </aside>
-      </div>
-
-      <div class="container hero-foot reveal">
-        <span>Scroll to explore</span>
-        <div class="scroll-line" aria-hidden="true"></div>
-      </div>
-    </section>
-
-    <section class="section section-soft" id="about">
-      <div class="container about-grid">
-        <div class="section-heading reveal">
-          <p class="eyebrow">ABOUT</p>
-          <h2>Research with a practical direction.</h2>
-        </div>
-
-        <div class="about-copy reveal">
-          <p class="large-copy">
-            My interests sit at the intersection of <strong>AI agents</strong>,
-            <strong>deep learning</strong>, <strong>RAG</strong>, and <strong>medical AI</strong>.
-          </p>
-
-          <p>
-            I enjoy building AI systems that combine reasoning, retrieval, tool use, and machine learning.
-            My current work includes agentic AI, retrieval-augmented generation, and ongoing
-            Alzheimer's disease–related research using structural MRI.
-          </p>
-
-          <p>
-            I also explore LLM applications, multi-agent workflows, vector databases, time-series
-            modeling, multimodal learning, and efficient deep learning systems.
-          </p>
-
-          <div class="about-highlights">
-            <article>
-              <span>01</span>
-              <h3>Research</h3>
-              <p>From methodological design to rigorous evaluation and scientific communication.</p>
-            </article>
-            <article>
-              <span>02</span>
-              <h3>Engineering</h3>
-              <p>Building reproducible PyTorch pipelines and resource-aware learning systems.</p>
-            </article>
-            <article>
-              <span>03</span>
-              <h3>Impact</h3>
-              <p>Focusing on methods that are interpretable, efficient, and clinically relevant.</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="research">
+  <main>
+    <section class="hero" id="profile">
       <div class="container">
-        <div class="section-heading split-heading reveal">
-          <div>
-            <p class="eyebrow">WHAT I WORK ON</p>
-            <h2>AI systems, deep learning, and medical AI.</h2>
-          </div>
-          <p>
-            My current focus spans intelligent agent systems, retrieval-augmented generation,
-            deep learning, and ongoing Alzheimer's disease–related MRI research.
-          </p>
+        <p class="eyebrow">Academic Profile</p>
+        <h1>Polash Chandra Das</h1>
+        <p class="subtitle">Master’s Student · Artificial Intelligence · Medical Image Analysis</p>
+        <p class="intro">
+          I am a Master’s student at Donghua University, China. My research interests include
+          deep learning, efficient neural networks, AI agents, and medical image analysis.
+          My current research focuses on structural MRI and machine-learning methods for
+          Alzheimer’s disease analysis.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="https://github.com/polashdas040" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+          <a class="button" href="https://www.linkedin.com/in/polashdas040" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <!-- Add your public email or CV link here when ready. -->
         </div>
-
-        <div class="focus-grid">
-          <article class="focus-card reveal">
-            <span class="focus-number">01</span>
-            <h3>AI Agents</h3>
-            <p>
-              Building agentic systems that can reason, call tools, use memory, and coordinate
-              multi-step workflows.
-            </p>
-            <div class="focus-tags">
-              <span>LangGraph</span>
-              <span>LangChain</span>
-              <span>Tool Calling</span>
-              <span>Multi-Agent</span>
-            </div>
-          </article>
-
-          <article class="focus-card reveal">
-            <span class="focus-number">02</span>
-            <h3>RAG & Agentic RAG</h3>
-            <p>
-              Designing retrieval pipelines that combine vector search, document processing,
-              reasoning, and agent workflows for grounded LLM applications.
-            </p>
-            <div class="focus-tags">
-              <span>RAG</span>
-              <span>ChromaDB</span>
-              <span>Embeddings</span>
-              <span>Vector Search</span>
-            </div>
-          </article>
-
-          <article class="focus-card reveal">
-            <span class="focus-number">03</span>
-            <h3>Deep Learning</h3>
-            <p>
-              Developing and experimenting with modern neural networks for computer vision,
-              representation learning, and efficient AI systems.
-            </p>
-            <div class="focus-tags">
-              <span>PyTorch</span>
-              <span>Transformers</span>
-              <span>Computer Vision</span>
-              <span>Efficient AI</span>
-            </div>
-          </article>
-
-          <article class="focus-card reveal">
-            <span class="focus-number">04</span>
-            <h3>Medical AI</h3>
-            <p>
-              Ongoing Alzheimer's disease–related research using structural MRI, with an interest
-              in clinically meaningful and computationally efficient learning methods.
-            </p>
-            <div class="focus-tags">
-              <span>Structural MRI</span>
-              <span>Alzheimer's Disease</span>
-              <span>Medical Imaging</span>
-              <span>Research</span>
-            </div>
-          </article>
+        <div class="tag-row" aria-label="Research areas">
+          <span class="tag">Deep Learning</span><span class="tag">Medical Image Analysis</span>
+          <span class="tag">Large Language Models</span><span class="tag">Computer Vision</span>
+          <span class="tag">Multi-Agent AI</span><span class="tag">Medical Diagnosis</span>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" id="projects">
+    <section id="education">
       <div class="container">
-        <div class="section-heading split-heading reveal">
-          <div>
-            <p class="eyebrow">SELECTED PROJECTS</p>
-            <h2>Research and engineering work.</h2>
-          </div>
-          <p>
-            A selection of projects spanning medical AI, computer vision, deep learning,
-            and software development.
-          </p>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card reveal">
-            <div class="project-top">
-              <span class="project-number">01</span>
-              <span class="project-arrow" aria-hidden="true">↗</span>
-            </div>
-            <p class="project-type">AI Agents · RAG</p>
-            <h3>Agentic RAG Systems</h3>
-            <p>
-              Building LLM applications that combine retrieval, vector databases, tool calling,
-              workflow orchestration, and multi-agent reasoning.
-            </p>
-            <div class="project-tags">
-              <span>LangGraph</span><span>LangChain</span><span>ChromaDB</span><span>FastAPI</span>
-            </div>
-            <a class="project-link" href="https://github.com/polashdas040" target="_blank" rel="noopener">
-              View GitHub
-            </a>
+        <p class="eyebrow">Academic Background</p>
+        <h2 class="section-title">Education</h2>
+        <div class="panel">
+          <article class="entry">
+            <h3>Donghua University, China</h3>
+            <p class="meta">Master’s Degree · 2024–2027</p>
+            <p>Computer Science and Technology</p>
           </article>
-          <article class="project-card reveal">
-            <div class="project-top">
-              <span class="project-number">02</span>
-              <span class="project-arrow" aria-hidden="true">↗</span>
-            </div>
-            <p class="project-type">Deep Learning · Computer Vision</p>
-            <h3>Deep Learning Image Denoising</h3>
-            <p>
-              Bachelor thesis research comparing deep learning approaches for image denoising
-              and studying image-quality evaluation.
-            </p>
-            <div class="project-tags">
-              <span>Deep Learning</span><span>Autoencoder</span><span>GAN</span>
-            </div>
-            <a class="project-link"
-               href="https://github.com/polashdas040/The-research-on-image-denoising-methods-based-on-the-deep-learning-theory"
-               target="_blank" rel="noopener">
-              Open project
-            </a>
+          <article class="entry">
+            <h3>Shandong University of Technology, China</h3>
+            <p class="meta">Bachelor’s Degree · 2019–2023</p>
+            <p>Computer Science and Technology</p>
           </article>
-
-          <article class="project-card reveal">
-            <div class="project-top">
-              <span class="project-number">03</span>
-              <span class="project-arrow" aria-hidden="true">↗</span>
-            </div>
-            <p class="project-type">Medical AI · Ongoing Research</p>
-            <h3>Alzheimer's Disease MRI Research</h3>
-            <p>
-              Ongoing research on deep learning methods for Alzheimer's disease–related analysis
-              using structural MRI, with emphasis on efficient and clinically meaningful modeling.
-            </p>
-            <div class="project-tags">
-              <span>PyTorch</span><span>Structural MRI</span><span>Medical AI</span>
-            </div>
-            <a class="project-link" href="#research">View research focus</a>
+          <article class="entry">
+            <h3>Royal Media College, Bangladesh</h3>
+            <p class="meta">Higher Secondary Education · 2016–2018</p>
+            <p>Science</p>
           </article>
-
-          <article class="project-card reveal">
-            <div class="project-top">
-              <span class="project-number">04</span>
-              <span class="project-arrow" aria-hidden="true">↗</span>
-            </div>
-            <p class="project-type">Software Engineering · Leadership</p>
-            <h3>Clinic Management System</h3>
-            <p>
-              Team-based web application project focused on clinic-management workflows,
-              technical coordination, and software project leadership.
-            </p>
-            <div class="project-tags">
-              <span>Web</span><span>Team Project</span><span>Leadership</span>
-            </div>
-            <a class="project-link" href="https://www.youtube.com/watch?v=v_LgAaFD7DY"
-               target="_blank" rel="noopener">View demo</a>
-          </article>
-
-          <article class="project-card reveal">
-            <div class="project-top">
-              <span class="project-number">05</span>
-              <span class="project-arrow" aria-hidden="true">↗</span>
-            </div>
-            <p class="project-type">Android · Java</p>
-            <h3>Online Examination System</h3>
-            <p>
-              Android application project for managing and delivering online examinations.
-            </p>
-            <div class="project-tags">
-              <span>Java</span><span>Android Studio</span><span>Mobile</span>
-            </div>
-            <a class="project-link"
-               href="https://github.com/polashdas040/Online-Exam-Java-Android-Studio-Final-Project"
-               target="_blank" rel="noopener">
-              Open project
-            </a>
-          </article>
-        </div>
-
-        <div class="section-cta reveal">
-          <p>More experiments, research code, and engineering work are available on GitHub.</p>
-          <a class="btn btn-secondary" href="https://github.com/polashdas040?tab=repositories" target="_blank" rel="noopener">
-            View all repositories <span aria-hidden="true">↗</span>
-          </a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="skills">
+    <section id="research">
       <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">TECHNICAL SKILLS</p>
-          <h2>Tools I use to turn research ideas into working systems.</h2>
-        </div>
-
-        <div class="skills-grid">
-          <article class="skill-panel reveal">
-            <span class="skill-icon">01</span>
-            <h3>AI Agents & LLM Systems</h3>
-            <div class="skill-list">
-              <span>LangGraph</span>
-              <span>LangChain</span>
-              <span>Agentic RAG</span>
-              <span>Tool Calling</span>
-              <span>Multi-Agent Systems</span>
-              <span>LLM Applications</span>
-            </div>
+        <p class="eyebrow">Research Interests</p>
+        <div class="panel">
+          <article class="entry">
+            <h3>Deep Learning for Alzheimer’s Disease Analysis</h3>
+            <p class="meta">Ongoing research · Structural MRI</p>
+            <p>Exploring lightweight deep-learning methods for classifying Alzheimer’s disease and related diagnostic groups using structural MRI data, with an emphasis on efficient models and careful subject-level evaluation.</p>
           </article>
-
-          <article class="skill-panel reveal">
-            <span class="skill-icon">02</span>
-            <h3>Deep Learning & Medical AI</h3>
-            <div class="skill-list">
-              <span>PyTorch</span>
-              <span>Transformers</span>
-              <span>Computer Vision</span>
-              <span>Structural MRI</span>
-              <span>Medical Image Analysis</span>
-              <span>Representation Learning</span>
-            </div>
+          <article class="entry">
+            <h3>Efficient Neural Networks and Computer Vision</h3>
+            <p>Interested in compact architectures and feature-learning methods that balance predictive performance with computational cost.</p>
           </article>
-
-          <article class="skill-panel reveal">
-            <span class="skill-icon">03</span>
-            <h3>Programming</h3>
-            <div class="skill-list">
-              <span>Python</span>
-              <span>C / C++</span>
-              <span>Java</span>
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </div>
+          <article class="entry">
+            <h3>Large Language Models and Multi-Agent Collaboration</h3>
+            <p>Interested in large language models, retrieval-augmented generation, and collaborative AI agents, especially for evidence-grounded workflows and potential applications in medical diagnosis.</p>
           </article>
-
-          <article class="skill-panel reveal">
-            <span class="skill-icon">04</span>
-            <h3>Engineering Tools</h3>
-            <div class="skill-list">
-              <span>Git & GitHub</span>
-              <span>Linux</span>
-              <span>LaTeX</span>
-              <span>Docker</span>
-              <span>FastAPI</span>
-              <span>ChromaDB</span>
-            </div>
+          <article class="entry">
+            <h3>Computer Vision and AI for Medical Diagnosis</h3>
+            <p>Exploring computer-vision methods and AI systems that support medical image understanding, clinical decision support, and multimodal medical analysis.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft" id="education">
+    <section id="publications">
       <div class="container">
-        <div class="section-heading reveal">
-          <p class="eyebrow">EDUCATION & RECOGNITION</p>
-          <h2>Academic foundation.</h2>
-        </div>
-
-        <div class="timeline-layout">
-          <div class="timeline reveal">
-            <article class="timeline-item">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-date">2024 — 2027</div>
-              <div class="timeline-content">
-                <p class="timeline-type">Master's Degree</p>
-                <h3>Donghua University, China</h3>
-                <p>Computer Science Technology</p>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-date">2019 — 2023</div>
-              <div class="timeline-content">
-                <p class="timeline-type">Bachelor's Degree</p>
-                <h3>Shandong University of Technology, China</h3>
-                <p>Computer Science Technology</p>
-              </div>
-            </article>
-
-            <article class="timeline-item">
-              <div class="timeline-dot" aria-hidden="true"></div>
-              <div class="timeline-date">2016 — 2018</div>
-              <div class="timeline-content">
-                <p class="timeline-type">Higher Secondary School</p>
-                <h3>Royal Media College, Bangladesh</h3>
-                <p>Science</p>
-              </div>
-            </article>
-          </div>
-
-          <aside class="awards-panel reveal">
-            <p class="eyebrow">RECOGNITION</p>
-            <div class="award-item">
-              <span>2024</span>
-              <div>
-                <h3>China Government Scholarship (CGS)</h3>
-              </div>
-            </div>
-            <div class="award-item">
-              <span>2023</span>
-              <div>
-                <h3>Outstanding Graduate</h3>
-                <p>Academic recognition upon graduation.</p>
-              </div>
-            </div>
-            <div class="award-item">
-              <span>2020</span>
-              <div>
-                <h3>Shandong Provincial Government Scholarship</h3>
-                <p>Awarded for outstanding academic results.</p>
-              </div>
-            </div>
-          </aside>
+        <p class="eyebrow">Research Output</p>
+        <h2 class="section-title">Publications</h2>
+        <div class="panel">
+          <article class="entry">
+            <h3>DEG-MobNet: Lightweight Multi-View Structural MRI Learning for Early Diagnosis of Alzheimer’s Disease</h3>
+            <p class="meta">Polash Chandra Das, Jiyun Li, Han Xia, et al. · December 1–4, 2026 · IEEE International Conference on Bioinformatics and Biomedicine (BIBM) · CCF-B · Accepted</p>
+            <ul>
+              <li>A lightweight multi-view structural MRI framework for Alzheimer’s disease diagnosis and MCI progression prediction using axial, coronal, and sagittal anatomical representations.</li>
+              <li>Uses a shared lightweight encoder with dilated convolution, ECA, GeM pooling, and subject-level attention pooling to reduce computational cost while preserving discriminative anatomical features.</li>
+              <li>Integrates MRI representations with MMSE, CDR-SB, and APOE ε4 clinical information and evaluates four ADNI classification tasks, including pMCI vs. sMCI.</li>
+            </ul>
+          </article>
+          <article class="entry">
+            <h3>PIACM: Prototype-Induced Axis-Consensus Mamba Network for Text-Guided 3D Medical Image Segmentation</h3>
+            <p class="meta">Jiabao Zhao, Han Xia, Ren Xia, Polash Chandra Das, Yan Gong, Jiyun Li, and Chen Qian · December 1–4, 2026 · IEEE International Conference on Bioinformatics and Biomedicine (BIBM) · CCF-B · Accepted</p>
+            <ul>
+              <li>A text-guided Mamba framework for 3D medical image segmentation.</li>
+              <li>Develops a Semantic-Guided Voxel Adapter (SGVA) to align voxel features with text-derived anatomical semantic prototypes.</li>
+              <li>Introduces Axis-Consensus Local-Frequency Mamba (ACLF-Mamba) to adaptively model coronal, sagittal, and axial volumetric dependencies.</li>
+              <li>Evaluates the framework on four public CT/MRI datasets, with strong anatomical segmentation and boundary preservation performance.</li>
+            </ul>
+          </article>
+          <article class="entry">
+            <h3>DBANet: Dual-Branch Adaptive Network with Topology-Aware Token Transport for Alzheimer’s Disease Staging from Structural MRI</h3>
+            <p class="meta">Yue Li, Sajad Ul Haq, Polash Chandra Das, et al. · August 22–25, 2026 · The 9th Chinese Conference on Pattern Recognition and Computer Vision (PRCV) · Harbin, China · Paper ID: 2578 · CCF-C · Accepted</p>
+            <ul>
+              <li>A dual-branch framework combining a pretrained Swin Transformer Tiny and Graph Attention Network (GAT) for Alzheimer’s disease staging from structural MRI.</li>
+              <li>Proposes a Topology-Aware Token Transport (TATT) module with spatially aligned bidirectional cross-attention and learnable gating, followed by adaptive soft-attention fusion for sample-specific integration of visual and structural features.</li>
+              <li>Evaluated on ADNI using strict subject-level partitioning.</li>
+            </ul>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section contact-section" id="contact">
-      <div class="container contact-card reveal">
-        <div>
-          <p class="eyebrow">LET'S CONNECT</p>
-          <h2>Interested in AI agents, deep learning, or research collaboration?</h2>
-          <p>
-            I am always interested in thoughtful discussions, collaboration, and opportunities
-            involving AI agents, RAG, deep learning, and medical AI.
-          </p>
-        </div>
-
-        <div class="contact-actions">
-          <a class="btn btn-primary" href="https://www.linkedin.com/in/polashdas040" target="_blank" rel="noopener">
-            Connect on LinkedIn <span aria-hidden="true">↗</span>
-          </a>
-          <a class="btn btn-secondary" href="https://github.com/polashdas040" target="_blank" rel="noopener">
-            Visit GitHub <span aria-hidden="true">↗</span>
-          </a>
-          <!-- Optional email button. Replace the placeholder with your real public email.
-          <a class="btn btn-secondary" href="mailto:your-email@example.com">
-            Email me
-          </a>
-          -->
+    <section id="contact">
+      <div class="container">
+        <p class="eyebrow">Get in Touch</p>
+        <h2 class="section-title">Contact</h2>
+        <div class="panel">
+          <p>I welcome academic discussions and research collaboration in deep learning, medical AI, and AI agents.</p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/polashdas040" target="_blank" rel="noopener noreferrer">github.com/polashdas040</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/polashdas040" target="_blank" rel="noopener noreferrer">linkedin.com/in/polashdas040</a></p>
+          <p class="publication-note">Add your preferred academic email address here if you want it displayed publicly.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <a class="brand footer-brand" href="#home">
-          <span class="brand-mark">PD</span>
-          <span class="brand-text">
-            <strong>Polash Chandra Das</strong>
-            <small>AI Research · Medical Imaging</small>
-          </span>
-        </a>
-      </div>
-
-      <p>Designed for research, built for the web.</p>
-
-      <p>© <span id="year"></span> Polash Chandra Das.</p>
-    </div>
+  <footer>
+    <div class="container">© <span id="year"></span> Polash Chandra Das · Academic Profile</div>
   </footer>
-
-  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
-    ↑
-  </button>
-
-  <script src="script.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
