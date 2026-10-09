@@ -37,6 +37,18 @@
     .nav-links { display: flex; flex-wrap: wrap; gap: 22px; font-size: 14px; }
     .nav-links a { color: var(--muted); }
     .hero { padding: 78px 0 54px; }
+    .hero-layout {
+      display: grid; grid-template-columns: minmax(0, 1fr) 190px;
+      align-items: center; gap: 44px;
+    }
+    .hero-copy { min-width: 0; }
+    .profile-photo {
+      width: 190px; height: 270px; justify-self: end;
+      border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+      background: #eef1f5; display: flex; align-items: center; justify-content: center;
+    }
+    .profile-photo img { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .photo-placeholder { padding: 18px; text-align: center; color: var(--muted); font-size: 13px; line-height: 1.5; }
     .eyebrow {
       color: var(--accent); text-transform: uppercase; letter-spacing: 1.8px;
       font-size: 12px; font-weight: 750; margin: 0 0 12px;
@@ -73,6 +85,8 @@
       nav { align-items: flex-start; flex-direction: column; padding: 14px 0; gap: 8px; }
       .nav-links { gap: 10px 16px; }
       .hero { padding-top: 48px; }
+      .hero-layout { grid-template-columns: 1fr; gap: 24px; }
+      .profile-photo { width: 150px; height: 190px; justify-self: start; grid-row: 1; }
       .panel { padding: 19px; }
     }
   </style>
@@ -93,7 +107,8 @@
 
   <main>
     <section class="hero" id="profile">
-      <div class="container">
+      <div class="container hero-layout">
+        <div class="hero-copy">
         <p class="eyebrow">Academic Profile</p>
         <h1>Polash Chandra Das</h1>
         <p class="subtitle">Master’s Student · Artificial Intelligence · Medical Image Analysis</p>
@@ -112,6 +127,11 @@
           <span class="tag">Deep Learning</span><span class="tag">Medical Image Analysis</span>
           <span class="tag">Large Language Models</span><span class="tag">Computer Vision</span>
           <span class="tag">Multi-Agent AI</span><span class="tag">Medical Diagnosis</span>
+        </div>
+        </div>
+        <div class="profile-photo">
+          <img src="img/photo.jpg" alt="Portrait of Polash Chandra Das" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <div class="photo-placeholder" style="display:none">Add your portrait as<br><strong>img/photo.jpg</strong></div>
         </div>
       </div>
     </section>
