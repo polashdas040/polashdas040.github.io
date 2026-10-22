@@ -285,12 +285,20 @@ MinIO, Next.js, React, TypeScript, Tailwind CSS, Docker Compose, Pytest, Vitest,
   <footer>
     <div class="container footer-row">
       <span>© <span id="year"></span> Polash Chandra Das · Academic Profile</span>
-      <!-- Unique View Counter using hits.sh -->
-<a class="view-counter" href="https://view-count.cloudtion.com/visitors?fallback-id=polashdas040.github.io" target="_blank" rel="noopener noreferrer" aria-label="Unique profile views">
-    <img src="https://view-count.cloudtion.com/visitors?color=2458a6&fallback-id=polashdas040.github.io" alt="Unique profile views">
-</a>
+      
+
+      <span class="view-counter" id="busuanzi_container_site_uv" style="display:none;">
+        Profile Views: <span id="busuanzi_value_site_uv" style="font-weight: 750; color: var(--accent);"></span>
+      </span>
+
     </div>
   </footer>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  
+  <script>
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  
+  <script defer src="https://events.vercount.one/js"></script>
 </body>
 </html>
